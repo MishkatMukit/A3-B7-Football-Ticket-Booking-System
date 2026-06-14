@@ -1,4 +1,3 @@
-
 -- =========================================================================
 -- SYSTEM: Football Ticket Booking System Database Setup Template
 -- DESCRIPTION: Pseudo-DDL Template for Table Creation & Data Insertion
@@ -36,7 +35,7 @@ CREATE TABLE Matches (
     match_id serial,
     fixture varchar(200) not null,
     tournament_category varchar(100),
-    base_ticket_price int,
+    base_ticket_price decimal(10,2),
     match_status varchar(50),
     
     -- Write your constraint to make 'match_id' the Primary Key
@@ -56,7 +55,7 @@ CREATE TABLE Bookings (
     match_id int,
     seat_number varchar(20),
     payment_status varchar(50),
-    total_cost int,
+    total_cost decimal(10,2),
     
     -- Write your constraint to make 'booking_id' the Primary Key
     constraint pk_bookings_booking_id primary key(booking_id),
